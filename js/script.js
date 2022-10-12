@@ -60,10 +60,10 @@ buttonDown.addEventListener("click", function(){
         slide[position].classList.remove("d-none");
         transparentImages[position].classList.add("focus-on-image");
     }
-    else if ( position >= slide.length - 2){
-        position = 0;
+    else{
         slide[position].classList.add("d-none");
         transparentImages[position].classList.remove("focus-on-image");
+        position = 0;
         slide[position].classList.remove("d-none");
         transparentImages[position].classList.add("focus-on-image");
     }
@@ -73,17 +73,17 @@ buttonDown.addEventListener("click", function(){
 buttonUp.addEventListener("click", function(){
 
          if(position > 0){
-            transparentImages[position].classList.remove("focus-on-image");
+             transparentImages[position].classList.remove("focus-on-image");
              slide[position].classList.add("d-none");
              position--;
              slide[position].classList.remove("d-none");
              transparentImages[position].classList.add("focus-on-image");
          }
-        //  else if (position < 0){
-        //     transparentImages[position].classList.remove("focus-on-image");
-        //      slide[position].classList.add("d-none");
-        //      position--;
-        //      slide[position].classList.remove("d-none");
-        //      transparentImages[position].classList.add("focus-on-image");
-        //  }
+         else{
+            transparentImages[position].classList.remove("focus-on-image");
+            slide[position].classList.add("d-none");
+            position = slide.length - 1;
+            slide[position].classList.remove("d-none");
+            transparentImages[position].classList.add("focus-on-image");
+         }
 })
