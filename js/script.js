@@ -55,7 +55,6 @@ buttonDown.addEventListener("click", function(){
 
 
 })
-
 // creo secondo bottone
 
 buttonUp.addEventListener("click", function(){
