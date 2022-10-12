@@ -20,9 +20,26 @@ for(let i = 0; i < imgPath.length; i++){
     const images = imgPath[i];
     console.log(images);
 
-    const imgElement = `<img class="image" src="${images}">`
+    const imgElement = `<img class="image d-none" src="${images}">`
     console.log(imgElement);
     slider.innerHTML += imgElement;
-    console.log(slider);
 }
 
+// dichiaro una variabile con queryall che vada a raggruppare le img appena vreate nel ciclo for per poi poterle gestire con i bottoni ed aggiungere classi hidden ecc.
+
+let slide = document.getElementsByClassName("image");
+console.log(slide, slide[1],);
+
+// ed essendo diventati degli array posso gestirli in questo caso tramiteil loro numero di indice impostando una variabile che ne indichi l'inizio
+
+let position = 0
+slide[position].classList.remove("d-none");
+
+
+// dichiaro i bottoni che mi serviranno
+
+const buttonDown = document.getElementById("button-bottom");
+const buttonUp = document.getElementById("button-top");
+console.log(buttonDown, buttonUp)
+
+// e creo il primo listener che toglierà un d none si sposterà di uno e lo riaggiungerà 
