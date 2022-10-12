@@ -20,7 +20,6 @@ body{
 .carousel{
     width: 60vw;
     height: 50vh;
-    border: 1px solid black;
     margin: 0 auto;
     position: relative;
 }
@@ -64,5 +63,11 @@ body{
     background-color: white;
 }
 
+.d-iblock{
+    display: inline-block;
+}
 
+.d-none{
+    display: none;
+}
 
