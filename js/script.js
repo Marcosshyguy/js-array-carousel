@@ -41,6 +41,12 @@ const buttonDown = document.getElementById("button-bottom");
 const buttonUp = document.getElementById("button-top");
 // console.log(buttonDown, buttonUp)
 
+// BONUS2 aggiungo con select by class le nuove immagini
+const transparentImages = document.getElementsByClassName("colum-images");
+console.log(transparentImages);
+transparentImages[position].classList.add("focus-on-image");
+// do la stessa classen di position anche ha queste immagini
+
 // e creo il primo listener che toglierà un d none si sposterà di uno e lo riaggiungerà 
 
 buttonDown.addEventListener("click", function(){
@@ -48,22 +54,21 @@ buttonDown.addEventListener("click", function(){
     if(position < slide.length - 1){
          
         slide[position].classList.add("d-none");
+        transparentImages[position].classList.remove("focus-on-image");
         position++;
         slide[position].classList.remove("d-none");
+        transparentImages[position].classList.add("focus-on-image");
     }
-    
-
-
 })
-// creo secondo bottone
+// creo secondo bottone con listener
 
 buttonUp.addEventListener("click", function(){
 
          if(position > 0){
-             
+            transparentImages[position].classList.remove("focus-on-image");
              slide[position].classList.add("d-none");
              position--;
              slide[position].classList.remove("d-none");
+             transparentImages[position].classList.add("focus-on-image");
          }
-
 })
