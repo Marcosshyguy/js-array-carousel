@@ -18,17 +18,16 @@ let slider = document.getElementById("slider");
 // ciclo for per la creazione e l'inserimento delle immagini tramite template literal
 for(let i = 0; i < imgPath.length; i++){
     const images = imgPath[i];
-    console.log(images);
+    // console.log(images);
 
     const imgElement = `<img class="image d-none" src="${images}">`
-    console.log(imgElement);
     slider.innerHTML += imgElement;
 }
 
 // dichiaro una variabile con queryall che vada a raggruppare le img appena vreate nel ciclo for per poi poterle gestire con i bottoni ed aggiungere classi hidden ecc.
 
 let slide = document.getElementsByClassName("image");
-console.log(slide, slide[1],);
+// console.log(slide, slide[1],);
 
 // ed essendo diventati degli array posso gestirli in questo caso tramiteil loro numero di indice impostando una variabile che ne indichi l'inizio
 
@@ -40,6 +39,32 @@ slide[position].classList.remove("d-none");
 
 const buttonDown = document.getElementById("button-bottom");
 const buttonUp = document.getElementById("button-top");
-console.log(buttonDown, buttonUp)
+// console.log(buttonDown, buttonUp)
 
 // e creo il primo listener che toglierà un d none si sposterà di uno e lo riaggiungerà 
+
+buttonDown.addEventListener("click", function(){
+
+    if(position < slide.length - 1){
+         
+        slide[position].classList.add("d-none");
+        position++;
+        slide[position].classList.remove("d-none");
+    }
+    
+
+
+})
+
+// creo secondo bottone
+
+buttonUp.addEventListener("click", function(){
+
+         if(position > 0){
+             
+             slide[position].classList.add("d-none");
+             position--;
+             slide[position].classList.remove("d-none");
+         }
+
+})
