@@ -60,6 +60,7 @@ buttonDown.addEventListener("click", function(){
         slide[position].classList.remove("d-none");
         transparentImages[position].classList.add("focus-on-image");
     }
+    // per fargli ripetere il ciclo risettimo la position a zero in modo che poi ricada nella prima condizione
     else{
         slide[position].classList.add("d-none");
         transparentImages[position].classList.remove("focus-on-image");
@@ -79,6 +80,7 @@ buttonUp.addEventListener("click", function(){
              slide[position].classList.remove("d-none");
              transparentImages[position].classList.add("focus-on-image");
          }
+        //  ripeto ciclo ma al contarrio impostando la position nella penultima posizione dell'indice (let.length -1)
          else{
             transparentImages[position].classList.remove("focus-on-image");
             slide[position].classList.add("d-none");
